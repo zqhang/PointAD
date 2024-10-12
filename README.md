@@ -1,4 +1,4 @@
-# PointAD （Detect Point and multimodal 3D anomalies）
+# PointAD （Detect point and multimodal 3D anomalies）
 > [**NeurIPS 24**] [**PointAD: Comprehending 3D Anomalies from Points and Pixels for Zero-shot 3D Anomaly Detection**](https://arxiv.org/pdf/2310.18961.pdf)
 
 ## Introduction 
