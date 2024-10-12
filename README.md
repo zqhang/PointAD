@@ -20,21 +20,21 @@ Download the dataset below:
 ### Generate the dataset JSON
 
 
-
 ## Main results
 
-We assume that only point cloud data is available during training. However, if corresponding RGB data is available during inference, PointAD directly integrates this information for multimodal detection.
+> **We assume that only point cloud data is available during training. However, if corresponding RGB data is available during inference, PointAD directly integrates this information for multimodal detection.
 
 ![visualization](./assets/visualization.png) 
 
-We evaluate PointAD in two zero-shot settings:
+### We evaluate PointAD in two zero-shot settings:
 
-One-vs-Rest: We train PointAD on a single class from the dataset and test its performance on the remaining classes. To ensure completeness of the result, we train PointAD three times using three distinct classes and report the averaged detection and segmentation performance. 
-
+### (1) One-vs-Rest
+We train PointAD on a single class from the dataset and test its performance on the remaining classes. To ensure completeness of the result, we train PointAD three times using three distinct classes and report the averaged detection and segmentation performance.**
 
 ![industrial](./assets/point_table.png) 
 
-Cross-Dataset: We train PointAD on one class on one class and test its performance on a completely different dataset with no overlap in class semantics.
+### (2) Cross-Dataset: 
+We train PointAD on one class on one class and test its performance on a completely different dataset with no overlap in class semantics.
 
 ![industrial](./assets/modality_table.png) 
 
@@ -45,7 +45,6 @@ Cross-Dataset: We train PointAD on one class on one class and test its performan
 ## Visualization
 
 ![visualization](./assets/more_visualization.png) 
-
 
 * We thank for the code repository: [open_clip](https://github.com/mlfoundations/open_clip) and [AnomalyCLIP](https://github.com/zqhang/AnomalyCLIP/tree/master).
 
