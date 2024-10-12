@@ -22,7 +22,7 @@ Download the dataset below:
 
 ## Main results
 
-> **We assume that only point cloud data is available during training. However, if corresponding RGB data is available during inference, PointAD directly integrates this information for multimodal detection.
+We assume that only point cloud data is available during training, which is practical for most real-world scenarios. However, if corresponding RGB data is available during inference, PointAD directly integrates this information for multimodal detection.
 
 ![visualization](./assets/visualization.png) 
 
