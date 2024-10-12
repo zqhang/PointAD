@@ -29,7 +29,7 @@ We assume that only point cloud data is available during training, which is prac
 ### We evaluate PointAD in two zero-shot settings:
 
 ### (1) One-vs-Rest
-We train PointAD on a single class from the dataset and test its performance on the remaining classes. To ensure completeness of the result, we train PointAD three times using three distinct classes and report the averaged detection and segmentation performance.**
+We train PointAD on a single class from the dataset and test its performance on the remaining classes. To ensure completeness of the result, we train PointAD three times using three distinct classes and report the averaged detection and segmentation performance.
 
 ![industrial](./assets/point_table.png) 
 
