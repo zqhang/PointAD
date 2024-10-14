@@ -16,7 +16,7 @@ Zero-shot (ZS) 3D anomaly detection is a crucial yet unexplored field that addre
 ### Prepare your dataset
 Download the dataset below:
 
-We prepare the rendering images of MVTecAD-3D, Eyecandies, and Real3D-AD
+We prepare the rendering images of MVTecAD-3D, Eyecandies, and Real3D-AD below.
 
 |Dataset|Originial version|rendering version (BaiDu Disk)|rendering version (Google Driver)|
 |:---:|:---:|:---:|:---:|
@@ -35,7 +35,7 @@ mvtec3d-ad/
 ├── bagel/
 │   ├── test/
 │   │   ├── combined/
-│   │   |   └── 2d_3d_cor    # point-to-pixel corresponse
+│   │   |   └── 2d_3d_cor    # point-to-pixel correspondence
 |   |   |   |   └── 000
 |   |   |   |   └── 001
 |   |   |   |   └── ...
