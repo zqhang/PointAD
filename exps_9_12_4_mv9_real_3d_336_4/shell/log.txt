@@ -1,0 +1,15 @@
+24-10-02 15:04:32.649 - INFO: epoch [1/15], d2_pixel_loss:1.0589, d3_point_loss:1.0322, d3_global_loss:0.7458, d2_image_loss:0.7009
+24-10-02 15:13:27.340 - INFO: epoch [2/15], d2_pixel_loss:1.0022, d3_point_loss:0.9813, d3_global_loss:0.6864, d2_image_loss:0.5841
+24-10-02 15:22:09.376 - INFO: epoch [3/15], d2_pixel_loss:0.9786, d3_point_loss:0.9378, d3_global_loss:0.6782, d2_image_loss:0.5263
+24-10-02 15:31:01.756 - INFO: epoch [4/15], d2_pixel_loss:0.9721, d3_point_loss:0.9320, d3_global_loss:0.7175, d2_image_loss:0.5703
+24-10-02 15:39:09.626 - INFO: epoch [5/15], d2_pixel_loss:0.9556, d3_point_loss:0.9092, d3_global_loss:0.6409, d2_image_loss:0.5104
+24-10-02 15:48:05.181 - INFO: epoch [6/15], d2_pixel_loss:0.9394, d3_point_loss:0.8932, d3_global_loss:0.6689, d2_image_loss:0.4937
+24-10-02 15:56:57.028 - INFO: epoch [7/15], d2_pixel_loss:0.9344, d3_point_loss:0.8874, d3_global_loss:0.6345, d2_image_loss:0.4831
+24-10-02 16:05:46.988 - INFO: epoch [8/15], d2_pixel_loss:0.9282, d3_point_loss:0.8816, d3_global_loss:0.6594, d2_image_loss:0.5095
+24-10-02 16:14:33.549 - INFO: epoch [9/15], d2_pixel_loss:0.9255, d3_point_loss:0.8818, d3_global_loss:0.6179, d2_image_loss:0.4537
+24-10-02 16:22:56.253 - INFO: epoch [10/15], d2_pixel_loss:0.9163, d3_point_loss:0.8722, d3_global_loss:0.6403, d2_image_loss:0.4664
+24-10-02 16:31:11.528 - INFO: epoch [11/15], d2_pixel_loss:0.9170, d3_point_loss:0.8745, d3_global_loss:0.6167, d2_image_loss:0.4539
+24-10-02 16:38:54.742 - INFO: epoch [12/15], d2_pixel_loss:0.9218, d3_point_loss:0.8769, d3_global_loss:0.6428, d2_image_loss:0.4905
+24-10-02 16:46:28.436 - INFO: epoch [13/15], d2_pixel_loss:0.9117, d3_point_loss:0.8692, d3_global_loss:0.6206, d2_image_loss:0.4495
+24-10-02 16:53:48.616 - INFO: epoch [14/15], d2_pixel_loss:0.9097, d3_point_loss:0.8675, d3_global_loss:0.6315, d2_image_loss:0.4480
+24-10-02 17:01:06.119 - INFO: epoch [15/15], d2_pixel_loss:0.9084, d3_point_loss:0.8653, d3_global_loss:0.6272, d2_image_loss:0.4509
