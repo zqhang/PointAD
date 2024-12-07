@@ -56,6 +56,8 @@ mvtec3d-ad/
 └── ...
 ```
 
+(Optional) We also provide the rendering script if you want to render point clouds into your customized 2D renderings.
+
 Generate the class-specific JSON for training, and the JSON of all classes for testing. The JSON can be found in the corresponding dataset folder.
 ```bash
 cd generate_dataset_json
