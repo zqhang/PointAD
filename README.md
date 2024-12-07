@@ -1,59 +1,70 @@
-# [AnomalyCLIP: Object-agnostic Prompt Learning for Zero-shot Anomaly Detection](https://arxiv.org/pdf/2310.18961.pdf) (ICLR 2024)
-We will release the code once the paper is accepted. 
-
-## Updates
-
-- **03.19.2024**: Open source !!!
+# PointAD （Detect 3D and multimodal 3D anomalies）
+> [**NeurIPS 24**] [**PointAD: Comprehending 3D Anomalies from Points and Pixels for Zero-shot 3D Anomaly Detection**](https://arxiv.org/pdf/2410.00320)
 
 ## Introduction 
-Zero-shot anomaly detection (ZSAD) requires detection models trained using auxiliary data to detect anomalies without any training sample in a target dataset. It is a crucial task when training data is not accessible due to various concerns, e.g., data privacy, yet it is challenging since the models need to generalize to anomalies across different domains where the appearance of foreground objects, abnormal regions, and background features, such as defects/tumors on different products/organs, can vary significantly. Recently large pre-trained vision-language models (VLMs), such as CLIP,
-have demonstrated strong zero-shot recognition ability in various vision tasks, including anomaly detection. However, their ZSAD performance is weak since the VLMs focus more on modeling the class semantics of the foreground objects rather than the abnormality/normality in the images.
-In this paper we introduce a novel approach, namely AnomalyCLIP, to adapt CLIP for accurate ZSAD across different domains. The key insight of AnomalyCLIP is to learn object-agnostic text prompts that capture generic normality and abnormality in an image regardless of its foreground objects. This allows our model to focus on the abnormal image regions rather than the object semantics, enabling generalized normality and abnormality recognition on diverse types of objects. Large-scale experiments on 17 real-world anomaly detection datasets show that AnomalyCLIP achieves superior zero-shot performance of detecting and segmenting anomalies in datasets of highly diverse class semantics from various defect inspection and medical imaging domains. All experiments are conducted in PyTorch-2.0.0 with a single NVIDIA RTX 3090 24GB. 
-## Overview of AnomalyCLIP
-![Overview of AnomalyCLIP](./assets/overview.png)
-
-## Analysis of different text prompt templates
-![analysis](./assets/analysis.png) 
-
-## Main results
-
-### Industrial dataset
-![industrial](./assets/Industrial.png) 
+Zero-shot (ZS) 3D anomaly detection is a crucial yet unexplored field that addresses scenarios where target 3D training samples are unavailable due to practical concerns like privacy protection. This paper introduces PointAD, a novel approach that transfers the strong generalization capabilities of CLIP for recognizing 3D anomalies on unseen objects. PointAD provides a unified framework to comprehend 3D anomalies from both points and pixels. In this framework, PointAD renders 3D anomalies into multiple 2D renderings and projects them back into 3D space. To capture the generic anomaly semantics into PointAD, we propose hybrid representation learning that optimizes the learnable text prompts from 3D and 2D through auxiliary point clouds. The collaboration optimization between point and pixel representations jointly facilitates our model to grasp underlying 3D anomaly patterns, contributing to detecting and segmenting anomalies of unseen diverse 3D objects. Through the alignment of 3D and 2D space, our model can directly integrate RGB information, further enhancing the understanding of 3D anomalies in a plug-and-play manner. Extensive experiments show the superiority of PointAD in ZS 3D anomaly detection across diverse unseen objects.
+![visualization](./assets/more_visualization.png) 
+## Motivation
+![analysis](./assets/motivation.png) 
 
 
-### Medical dataset
-![medical](./assets/medical.png) 
-
-
-## Visualization
-
-![hazelnut](./assets/hazelnut.png) 
-
-![capusle](./assets/capusle.png) 
-
-![skin](./assets/skin.png) 
-
-![brain](./assets/brain.png) 
+## Overview of PointAD
+![overview](./assets/overview.png)
 
 ## How to Run
+
 ### Prepare your dataset
 Download the dataset below:
 
-* Industrial Domain:
-[MVTec](https://www.mvtec.com/company/research/datasets/mvtec-ad), [VisA](https://github.com/amazon-science/spot-diff), [MPDD](https://github.com/stepanje/MPDD), [BTAD](http://avires.dimi.uniud.it/papers/btad/btad.zip), [SDD](https://www.vicos.si/resources/kolektorsdd/), [DAGM](https://www.kaggle.com/datasets/mhskjelvareid/dagm-2007-competition-dataset-optical-inspection), [DTD-Synthetic](https://drive.google.com/drive/folders/10OyPzvI3H6llCZBxKxFlKWt1Pw1tkMK1)
+We prepare the rendering images of MVTecAD-3D, Eyecandies, and Real3D-AD below.
 
-* Medical Domain:
-[HeadCT](https://www.kaggle.com/datasets/felipekitamura/head-ct-hemorrhage), [BrainMRI](https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection), [Br35H](https://www.kaggle.com/datasets/ahmedhamada0/brain-tumor-detection), [COVID-19](https://www.kaggle.com/datasets/tawsifurrahman/covid19-radiography-database), [ISIC](https://isic-challenge-data.s3.amazonaws.com/2016/ISBI2016_ISIC_Part1_Test_Data.zip), [CVC-ColonDB](https://figshare.com/articles/figure/Polyp_DataSet_zip/21221579), [CVC-ClinicDB](https://figshare.com/articles/figure/Polyp_DataSet_zip/21221579), [Kvasir](https://figshare.com/articles/figure/Polyp_DataSet_zip/21221579), [Endo](https://drive.google.com/file/d/1LNpLkv5ZlEUzr_RPN5rdOHaqk0SkZa3m/view), [TN3K](https://github.com/haifangong/TRFE-Net-for-thyroid-nodule-segmentation?tab=readme-ov-file).
+|Dataset|Originial version|Rendering version (BaiDu Disk)|Rendering version (Google Driver)|
+|:---:|:---:|:---:|:---:|
+|MVTec3D-AD|[Ori](https://www.mvtec.com/company/research/datasets/mvtec-3d-ad)|[BaiDu Disk](https://pan.baidu.com/s/1-gIqPM8ibW1IRF3FoII6Ow?pwd=urxi)|[Google Driver]|
+|Eyecandies|[Ori](https://eyecan-ai.github.io/eyecandies/)|[BaiDu Disk](https://pan.baidu.com/s/1cFAmElfSKT0uCyltu5TbgQ?pwd=p4e5)|[Google Driver]|
+|Real3D-AD|[Ori](https://github.com/M-3LAB/Real3D-AD)|[BaiDu Disk](https://pan.baidu.com/s/1x9QW0-bBWyLyerTW5Ce4fw?pwd=fd7x)|[Google Driver]|
 
 ### Generate the dataset JSON
+Take MVTec3D-AD for example (With multiple anomaly categories)
+
+Structure of MVTec Folder:
+```
+mvtec3d-ad/
+│
+│
+├── bagel/
+│   ├── test/
+│   │   ├── combined/
+│   │   |   └── 2d_3d_cor    # point-to-pixel correspondence
+|   |   |   |   └── 000
+|   |   |   |   └── 001
+|   |   |   |   └── ...
+|   |   |   └── 2d_gt        # generated 2D ground truth
+|   |   |   └── 2d_rendering # generated 2D renderings
+|   |   |   └── gt           # 3D ground truth （png format）
+|   |   |   └── gt_pcd       # 3D ground truth （pcd format）
+|   |   |   └── pcd          # 3D point cloud （pcd format）
+|   |   |   └── rgb          # RGB information （pcd format）
+|   |   |   └── xyz          # 3D point cloud （tiff format）
+│   |   |
+│   |   └── crack/
+│   |        └── ...
+│   └── ...
+|   
+│     
+│   
+└── ...
+```
+
+(Optional) We also provide the rendering script [here](https://github.com/zqhang/PointAD/blob/master/multi_view/multiview_eyecandies.py) if you want to render point clouds into your customized 2D renderings.
+
+Generate the class-specific JSON for training, and the JSON of all classes for testing. The JSON can be found in the corresponding dataset folder.
 ```bash
 cd generate_dataset_json
-python mvtec.py
+python mvtec3d-ad.py
 ```
-Select the corresponding script and run it (we provide all scripts for datasets that AnomalyCLIP reported). The generated JSON stores all the information that AnomalyCLIP needs.
-
-### Run AnomalyCLIP
-* Quick start (use the pre-trained weights)
+### Run PointAD
+* Quick start (Use the pre-trained weights from our paper, named according to the training class.)
 ```bash
 bash test.sh
 ```
@@ -63,20 +74,40 @@ bash test.sh
 bash train.sh
 ```
 
+## Main results
 
-## We provide the reproduction of WinCLIP [here](https://github.com/zqhang/WinCLIP-pytorch)
+We assume that only point cloud data is available during training, which is practical for most real-world scenarios. However, if corresponding RGB data is available during inference, PointAD directly integrates this information for multimodal detection.
+
+![visualization](./assets/visualization.png) 
+
+### We evaluate PointAD in two zero-shot settings:
+
+### (1) One-vs-Rest
+We train PointAD on a single class from the dataset and test its performance on the remaining classes. To ensure completeness of the result, we train PointAD three times using three distinct classes and report the averaged detection and segmentation performance.
+
+![industrial](./assets/point_table.png) 
+
+### (2) Cross-Dataset: 
+We train PointAD on one class on one class and test its performance on a completely different dataset with no overlap in class semantics.
+
+![industrial](./assets/modality_table.png) 
 
 
-* We thank for the code repository: [open_clip](https://github.com/mlfoundations/open_clip), [DualCoOp](https://github.com/sunxm2357/DualCoOp), [CLIP_Surgery](https://github.com/xmed-lab/CLIP_Surgery), and [VAND](https://github.com/ByChelsea/VAND-APRIL-GAN/tree/master).
+## How multimodality makes PointAD accurate
+![industrial](./assets/modality.png) 
+
+
+* We thank for the code repository: [open_clip](https://github.com/mlfoundations/open_clip) and [AnomalyCLIP](https://github.com/zqhang/AnomalyCLIP/tree/master).
+
 ## BibTex Citation
 
 If you find this paper and repository useful, please cite our paper.
 
 ```
-@article{zhou2023anomalyclip,
-  title={AnomalyCLIP: Object-agnostic Prompt Learning for Zero-shot Anomaly Detection},
-  author={Zhou, Qihang and Pang, Guansong and Tian, Yu and He, Shibo and Chen, Jiming},
-  journal={The Twelfth International Conference on Learning Representations},
-  year={2023}
+@article{zhou2024pointad,
+  title={PointAD: Comprehending 3D Anomalies from Points and Pixels for Zero-shot 3D Anomaly Detection},
+  author={Zhou, Qihang and Yan, Jiangtao and He, Shibo and Meng, Wenchao and Chen, Jiming},
+  journal={arXiv preprint arXiv:2410.00320},
+  year={2024}
 }
 ```
