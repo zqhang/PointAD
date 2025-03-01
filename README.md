@@ -63,7 +63,7 @@ mvtec3d-ad/
 Generate the class-specific JSON for training, and the JSON of all classes for testing. The JSON can be found in the corresponding dataset folder.
 ```bash
 cd generate_dataset_json
-python mvtec3d-ad.py
+python mvtec_3d_anomaly_mvtect_3d_ad_whole.py
 ```
 ### Run PointAD
 * Quick start (Use the pre-trained weights from our paper, named according to the training class.)
