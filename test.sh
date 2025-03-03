@@ -19,7 +19,7 @@ for cls_id in "${!cls_ids[@]}";do
             
             CUDA_VISIBLE_DEVICES=${device} python test.py --dataset mvtec_pc_3d_rgb \
             --data_path /remote-home/iot_zhouqihang/data/mvtec_3d_mv/mvtec_3d_9_views --save_path ./results/mvtec_${base_dir}_pc_336_4_all/with_color_max_scor${obj_list[cls_id]}/zero_shot_1 \
-            --checkpoint_path /remote-home/iot_zhouqihang/root/zqh/AnomalyPointCLIP/AnomalyPoint/exps_object_no_surgery_text_token_test_token_length/9_12_4_multiscale_visa_no_adapter_rendering_class_re_mean_no_color_mv9_336_4/mvtecvit_large_14_518/cookie/epoch_15.pth \
+            --checkpoint_path ${save_dir}epoch_15.pth \
             --features_list 6 12 18 24 --image_size 336 --depth ${depth[i]} --n_ctx ${n_ctx[j]} --t_n_ctx ${t_n_ctx[0]} --train_class ${obj_list[cls_id]}
         wait
         done
