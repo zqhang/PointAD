@@ -22,7 +22,7 @@ We prepare the rendering images of MVTecAD-3D, Eyecandies, and Real3D-AD below.
 
 |Dataset|Originial version|Rendering version (BaiDu Disk)|Rendering version (Google Driver)|
 |:---:|:---:|:---:|:---:|
-|MVTec3D-AD|[Ori](https://www.mvtec.com/company/research/datasets/mvtec-3d-ad)|[BaiDu Disk](https://pan.baidu.com/s/1-gIqPM8ibW1IRF3FoII6Ow?pwd=urxi)|[Google Driver]|
+|MVTec3D-AD|[Ori](https://www.mvtec.com/company/research/datasets/mvtec-3d-ad)|[BaiDu Disk](https://pan.baidu.com/s/1gafSt4DG5_6mRkxTNkEK1w?pwd=mc5c)|[Google Driver]|
 |Eyecandies|[Ori](https://eyecan-ai.github.io/eyecandies/)|[BaiDu Disk](https://pan.baidu.com/s/1cFAmElfSKT0uCyltu5TbgQ?pwd=p4e5)|[Google Driver]|
 |Real3D-AD|[Ori](https://github.com/M-3LAB/Real3D-AD)|[BaiDu Disk](https://pan.baidu.com/s/1x9QW0-bBWyLyerTW5Ce4fw?pwd=fd7x)|[Google Driver]|
 
