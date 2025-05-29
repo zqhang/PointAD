@@ -106,10 +106,12 @@ We train PointAD on one class on one class and test its performance on a complet
 If you find this paper and repository useful, please cite our paper.
 
 ```
-@article{zhou2024pointad,
-  title={PointAD: Comprehending 3D Anomalies from Points and Pixels for Zero-shot 3D Anomaly Detection},
-  author={Zhou, Qihang and Yan, Jiangtao and He, Shibo and Meng, Wenchao and Chen, Jiming},
-  journal={arXiv preprint arXiv:2410.00320},
-  year={2024}
+@inproceedings{
+zhou2024pointad,
+title={Point{AD}: Comprehending 3D Anomalies from Points and Pixels for Zero-shot 3D Anomaly Detection},
+author={Qihang Zhou and Jiangtao Yan and Shibo He and Wenchao Meng and Jiming Chen},
+booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems},
+year={2024},
+url={https://openreview.net/forum?id=02CIZ8qeDc}
 }
 ```
